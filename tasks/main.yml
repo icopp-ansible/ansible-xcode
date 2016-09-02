@@ -1,0 +1,8 @@
+---
+- name: Install Xcode via Mac App Store
+  command: mas install "{{ item.id }}"
+  args:
+    creates: /Applications/{{ item.name }}.app
+  with_items:
+    - { id: 497799835, name: "Xcode" }
+  when: ansible_os_family == "Darwin"

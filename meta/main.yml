@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Ian Copp
+  description: Install Xcode via the Mac App Store. Does nothing on non-macOS platforms.
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: MacOSX
+      versions:
+        - all
+  galaxy_tags:
+    - application
+
+dependencies:
+  - role: icopp.mas-cli
+    when: ansible_os_family == "Darwin"
